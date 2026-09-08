@@ -408,7 +408,23 @@
             font-family: 'JetBrains Mono', monospace;
         }
 
+        .owner-tag {
+            display: inline-block;
+            background: rgba(16, 185, 129, 0.1);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            color: var(--success);
+            padding: 4px 12px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 600;
+            margin: 2px;
+        }
 
+        .no-owner {
+            color: var(--text-muted);
+            font-style: italic;
+            font-weight: 400;
+        }
 
         /* ── Footer ── */
         .footer {
@@ -1346,8 +1362,6 @@
     }
 
     function renderItemDetail(item) {
-
-
         return `
             <div class="item-detail">
                 <div class="asset-tag-header">
