@@ -408,23 +408,7 @@
             font-family: 'JetBrains Mono', monospace;
         }
 
-        .owner-tag {
-            display: inline-block;
-            background: rgba(16, 185, 129, 0.1);
-            border: 1px solid rgba(16, 185, 129, 0.3);
-            color: var(--success);
-            padding: 4px 12px;
-            border-radius: 8px;
-            font-size: 13px;
-            font-weight: 600;
-            margin: 2px;
-        }
 
-        .no-owner {
-            color: var(--text-muted);
-            font-style: italic;
-            font-weight: 400;
-        }
 
         /* ── Footer ── */
         .footer {
@@ -1343,11 +1327,11 @@
             <div class="section-title" id="listTitle">All Assets (${totalItems})</div>
             <div class="item-list" id="itemList">
                 ${ITEMS.map((item, index) => `
-                    <a href="#item-${item.id}" class="item-list-card" data-name="${item.item}" data-desc="${item.description}" data-owner="${item.current_owner}" style="animation: fadeInUp 0.4s ease-out ${Math.min(index * 0.03, 0.8)}s backwards;">
+                    <a href="#item-${item.id}" class="item-list-card" data-name="${item.item}" data-desc="${item.description}" style="animation: fadeInUp 0.4s ease-out ${Math.min(index * 0.03, 0.8)}s backwards;">
                         <div class="item-list-icon">${getIcon(item.item)}</div>
                         <div class="item-list-info">
                             <div class="item-list-name">${item.item}</div>
-                            <div class="item-list-sub">${item.description || item.current_owner || 'No description'}</div>
+                            <div class="item-list-sub">${item.description || 'No description'}</div>
                         </div>
                         <div class="item-list-tag">${item.asset_tag}</div>
                         <div class="item-list-arrow">›</div>
@@ -1362,10 +1346,7 @@
     }
 
     function renderItemDetail(item) {
-        const owners = item.current_owner ? item.current_owner.split(',').map(o => o.trim()).filter(o => o) : [];
-        const ownerHtml = owners.length > 0 
-            ? owners.map(o => `<span class="owner-tag">${o}</span>`).join(' ') 
-            : '<span class="no-owner">Unassigned</span>';
+
 
         return `
             <div class="item-detail">
@@ -1418,13 +1399,7 @@
                             </div>
                             <div class="detail-value currency">${formatCurrency(item.total)}</div>
                         </div>
-                        <div class="detail-row">
-                            <div class="detail-label">
-                                <span class="icon" style="background:rgba(99,102,241,0.1);">👤</span>
-                                Current Owner
-                            </div>
-                            <div class="detail-value">${ownerHtml}</div>
-                        </div>
+
                     </div>
                 </div>
             </div>
@@ -1439,8 +1414,7 @@
         cards.forEach(card => {
             const name = card.dataset.name.toLowerCase();
             const desc = card.dataset.desc.toLowerCase();
-            const owner = card.dataset.owner.toLowerCase();
-            const match = name.includes(query) || desc.includes(query) || owner.includes(query);
+            const match = name.includes(query) || desc.includes(query);
             card.classList.toggle('hidden', !match);
             if (match) visible++;
         });
