@@ -1,0 +1,1475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asset Details - SURGE GLOBAL (PVT) LIMITED</title>
+    <meta name="description" content="Asset inventory management system for SURGE GLOBAL (PVT) LIMITED. Scan QR codes to view item details.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #0a0e1a;
+            --bg-secondary: #111827;
+            --bg-card: #1a2035;
+            --bg-card-hover: #1f2847;
+            --border-color: rgba(99, 102, 241, 0.15);
+            --border-glow: rgba(99, 102, 241, 0.4);
+            --text-primary: #f1f5f9;
+            --text-secondary: #94a3b8;
+            --text-muted: #64748b;
+            --accent-1: #6366f1;
+            --accent-2: #8b5cf6;
+            --accent-3: #a78bfa;
+            --accent-gradient: linear-gradient(135deg, #6366f1, #8b5cf6, #a78bfa);
+            --success: #10b981;
+            --warning: #f59e0b;
+            --danger: #ef4444;
+            --glass-bg: rgba(26, 32, 53, 0.8);
+            --glass-border: rgba(99, 102, 241, 0.2);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* ── Animated Background ── */
+        .bg-grid {
+            position: fixed;
+            inset: 0;
+            background-image: 
+                linear-gradient(rgba(99, 102, 241, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(99, 102, 241, 0.03) 1px, transparent 1px);
+            background-size: 60px 60px;
+            z-index: 0;
+        }
+
+        .bg-glow {
+            position: fixed;
+            width: 600px;
+            height: 600px;
+            border-radius: 50%;
+            filter: blur(120px);
+            opacity: 0.15;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .bg-glow-1 {
+            top: -200px;
+            right: -100px;
+            background: #6366f1;
+            animation: float 8s ease-in-out infinite;
+        }
+
+        .bg-glow-2 {
+            bottom: -200px;
+            left: -100px;
+            background: #8b5cf6;
+            animation: float 10s ease-in-out infinite reverse;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0); }
+            50% { transform: translate(30px, -30px); }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes slideInRight {
+            from { opacity: 0; transform: translateX(20px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        @keyframes pulse-ring {
+            0% { transform: scale(0.9); opacity: 0.5; }
+            50% { transform: scale(1); opacity: 1; }
+            100% { transform: scale(0.9); opacity: 0.5; }
+        }
+
+        @keyframes shimmer {
+            0% { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
+        }
+
+        /* ── Header ── */
+        .header {
+            position: relative;
+            z-index: 10;
+            padding: 20px 24px;
+            background: rgba(10, 14, 26, 0.9);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .header-inner {
+            max-width: 600px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .logo-mark {
+            width: 48px;
+            height: 48px;
+            border-radius: 14px;
+            background: var(--accent-gradient);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            font-weight: 800;
+            color: white;
+            box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+            flex-shrink: 0;
+        }
+
+        .header-text h1 {
+            font-size: 18px;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .header-text p {
+            font-size: 12px;
+            color: var(--text-muted);
+            margin-top: 2px;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+
+        /* ── Main Content ── */
+        .container {
+            position: relative;
+            z-index: 10;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 24px;
+        }
+
+        /* ── Landing Page ── */
+        .landing {
+            text-align: center;
+            padding: 60px 20px;
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        .landing-icon {
+            width: 100px;
+            height: 100px;
+            border-radius: 28px;
+            background: var(--accent-gradient);
+            margin: 0 auto 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            box-shadow: 0 8px 40px rgba(99, 102, 241, 0.3);
+            animation: pulse-ring 3s ease-in-out infinite;
+        }
+
+        .landing h2 {
+            font-size: 28px;
+            font-weight: 800;
+            margin-bottom: 12px;
+            letter-spacing: -0.03em;
+        }
+
+        .landing p {
+            color: var(--text-secondary);
+            font-size: 16px;
+            line-height: 1.6;
+            max-width: 400px;
+            margin: 0 auto 40px;
+        }
+
+        .stats-row {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            margin-top: 32px;
+        }
+
+        .stat-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 20px 12px;
+            transition: all 0.3s ease;
+        }
+
+        .stat-card:hover {
+            border-color: var(--border-glow);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(99, 102, 241, 0.15);
+        }
+
+        .stat-value {
+            font-size: 24px;
+            font-weight: 800;
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .stat-label {
+            font-size: 11px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-top: 6px;
+        }
+
+        /* ── Item Detail Card ── */
+        .item-detail {
+            animation: fadeInUp 0.5s ease-out;
+        }
+
+        .asset-tag-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 24px;
+        }
+
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 18px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            color: var(--text-secondary);
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .back-btn:hover {
+            border-color: var(--accent-1);
+            color: var(--text-primary);
+            transform: translateX(-3px);
+        }
+
+        .asset-badge {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 13px;
+            font-weight: 600;
+            padding: 8px 16px;
+            background: rgba(99, 102, 241, 0.1);
+            border: 1px solid rgba(99, 102, 241, 0.3);
+            border-radius: 10px;
+            color: var(--accent-3);
+            letter-spacing: 0.05em;
+        }
+
+        .detail-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .detail-card-header {
+            padding: 32px 28px;
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.08), rgba(139, 92, 246, 0.05));
+            border-bottom: 1px solid var(--border-color);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .detail-card-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--accent-gradient);
+        }
+
+        .item-icon {
+            width: 56px;
+            height: 56px;
+            border-radius: 16px;
+            background: var(--accent-gradient);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 26px;
+            margin-bottom: 16px;
+            box-shadow: 0 4px 20px rgba(99, 102, 241, 0.25);
+        }
+
+        .item-name {
+            font-size: 24px;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            margin-bottom: 6px;
+            line-height: 1.2;
+        }
+
+        .item-desc {
+            font-size: 14px;
+            color: var(--accent-3);
+            font-weight: 500;
+        }
+
+        .detail-card-body {
+            padding: 28px;
+        }
+
+        .detail-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 0;
+            border-bottom: 1px solid rgba(99, 102, 241, 0.08);
+            animation: slideInRight 0.4s ease-out backwards;
+        }
+
+        .detail-row:last-child {
+            border-bottom: none;
+        }
+
+        .detail-row:nth-child(1) { animation-delay: 0.05s; }
+        .detail-row:nth-child(2) { animation-delay: 0.1s; }
+        .detail-row:nth-child(3) { animation-delay: 0.15s; }
+        .detail-row:nth-child(4) { animation-delay: 0.2s; }
+        .detail-row:nth-child(5) { animation-delay: 0.25s; }
+        .detail-row:nth-child(6) { animation-delay: 0.3s; }
+
+        .detail-label {
+            font-size: 13px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .detail-label .icon {
+            width: 32px;
+            height: 32px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            flex-shrink: 0;
+        }
+
+        .detail-value {
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--text-primary);
+            text-align: right;
+            max-width: 55%;
+            word-break: break-word;
+        }
+
+        .detail-value.currency {
+            font-family: 'JetBrains Mono', monospace;
+            color: var(--success);
+            font-size: 16px;
+        }
+
+        .detail-value.quantity {
+            background: rgba(99, 102, 241, 0.1);
+            border: 1px solid rgba(99, 102, 241, 0.3);
+            padding: 4px 14px;
+            border-radius: 8px;
+            color: var(--accent-3);
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .owner-tag {
+            display: inline-block;
+            background: rgba(16, 185, 129, 0.1);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            color: var(--success);
+            padding: 4px 12px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 600;
+            margin: 2px;
+        }
+
+        .no-owner {
+            color: var(--text-muted);
+            font-style: italic;
+            font-weight: 400;
+        }
+
+        /* ── Footer ── */
+        .footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: var(--text-muted);
+            font-size: 12px;
+        }
+
+        .footer-line {
+            width: 60px;
+            height: 2px;
+            background: var(--accent-gradient);
+            margin: 0 auto 16px;
+            border-radius: 2px;
+        }
+
+        /* ── Item List View ── */
+        .search-box {
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 14px 20px 14px 48px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            color: var(--text-primary);
+            font-family: 'Inter', sans-serif;
+            font-size: 15px;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        .search-box input:focus {
+            border-color: var(--accent-1);
+            box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
+        }
+
+        .search-box input::placeholder {
+            color: var(--text-muted);
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 18px;
+            color: var(--text-muted);
+        }
+
+        .item-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .item-list-card {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 16px 18px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .item-list-card:hover {
+            border-color: var(--border-glow);
+            background: var(--bg-card-hover);
+            transform: translateX(4px);
+            box-shadow: 0 4px 20px rgba(99, 102, 241, 0.1);
+        }
+
+        .item-list-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.15), rgba(139, 92, 246, 0.1));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            flex-shrink: 0;
+        }
+
+        .item-list-info {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .item-list-name {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 3px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .item-list-sub {
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+
+        .item-list-tag {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 11px;
+            color: var(--accent-3);
+            background: rgba(99, 102, 241, 0.1);
+            padding: 4px 10px;
+            border-radius: 6px;
+            white-space: nowrap;
+        }
+
+        .item-list-arrow {
+            color: var(--text-muted);
+            font-size: 18px;
+            transition: transform 0.3s ease;
+        }
+
+        .item-list-card:hover .item-list-arrow {
+            transform: translateX(3px);
+            color: var(--accent-1);
+        }
+
+        .section-title {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: 14px;
+            padding-left: 4px;
+        }
+
+        .hidden {
+            display: none !important;
+        }
+
+        .no-results {
+            text-align: center;
+            padding: 40px;
+            color: var(--text-muted);
+        }
+
+        .no-results .emoji {
+            font-size: 48px;
+            margin-bottom: 12px;
+        }
+
+        /* ── Responsive ── */
+        @media (max-width: 480px) {
+            .container { padding: 16px; }
+            .detail-card-header { padding: 24px 20px; }
+            .detail-card-body { padding: 20px; }
+            .item-name { font-size: 20px; }
+            .stats-row { grid-template-columns: repeat(3, 1fr); gap: 8px; }
+            .stat-card { padding: 14px 8px; }
+            .stat-value { font-size: 20px; }
+        }
+
+        /* Print styles */
+        @media print {
+            body { background: white; color: #1a1a1a; }
+            .bg-grid, .bg-glow { display: none; }
+            .detail-card { box-shadow: none; border: 2px solid #e5e7eb; }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-grid"></div>
+    <div class="bg-glow bg-glow-1"></div>
+    <div class="bg-glow bg-glow-2"></div>
+
+    <header class="header">
+        <div class="header-inner">
+            <div class="logo-mark">SG</div>
+            <div class="header-text">
+                <h1>SURGE GLOBAL (PVT) LIMITED</h1>
+                <p>Asset Management System</p>
+            </div>
+        </div>
+    </header>
+
+    <main class="container" id="app">
+        <!-- Content injected by JS -->
+    </main>
+
+    <footer class="footer">
+        <div class="footer-line"></div>
+        <p>SURGE GLOBAL (PVT) LIMITED</p>
+        <p style="margin-top:4px;">Asset Management System &copy; 2026</p>
+    </footer>
+
+    <script>
+    const ITEMS = [
+  {
+    "item": "KITCHEN CUPBOARD",
+    "description": "",
+    "quantity": 1,
+    "unit_price": 17900.0,
+    "total": 17900.0,
+    "current_owner": "",
+    "id": "CDAFFAC6",
+    "asset_tag": "SG-001"
+  },
+  {
+    "item": "KITCHEN DRAWER PLASTIC",
+    "description": "",
+    "quantity": 1,
+    "unit_price": 8500.0,
+    "total": 8500.0,
+    "current_owner": "",
+    "id": "9B77B74E",
+    "asset_tag": "SG-002"
+  },
+  {
+    "item": "WATER DISPENSER",
+    "description": "",
+    "quantity": 1,
+    "unit_price": 29661.0,
+    "total": 29661.0,
+    "current_owner": "",
+    "id": "8A4581BF",
+    "asset_tag": "SG-003"
+  },
+  {
+    "item": "MEETING ROOM AC",
+    "description": "",
+    "quantity": 1,
+    "unit_price": 125000.0,
+    "total": 125000.0,
+    "current_owner": "",
+    "id": "CF158966",
+    "asset_tag": "SG-004"
+  },
+  {
+    "item": "MEETING ROOM TV",
+    "description": "50 INCH",
+    "quantity": 1,
+    "unit_price": 65000.0,
+    "total": 65000.0,
+    "current_owner": "",
+    "id": "DAB1895C",
+    "asset_tag": "SG-005"
+  },
+  {
+    "item": "STEEL CUPBOARDS",
+    "description": "",
+    "quantity": 3,
+    "unit_price": 25500.0,
+    "total": 76500.0,
+    "current_owner": "WORKSHOP",
+    "id": "8CD03399",
+    "asset_tag": "SG-006"
+  },
+  {
+    "item": "BENCH WISE",
+    "description": "",
+    "quantity": 1,
+    "unit_price": 23500.0,
+    "total": 23500.0,
+    "current_owner": "WORKSHOP",
+    "id": "EACAEE51",
+    "asset_tag": "SG-007"
+  },
+  {
+    "item": "MITER SAW DBL",
+    "description": "",
+    "quantity": 1,
+    "unit_price": 90000.0,
+    "total": 90000.0,
+    "current_owner": "WORKSHOP",
+    "id": "23DBAC5F",
+    "asset_tag": "SG-008"
+  },
+  {
+    "item": "BENCH DRILL MEN",
+    "description": "",
+    "quantity": 1,
+    "unit_price": 21950.0,
+    "total": 21950.0,
+    "current_owner": "WORKSHOP",
+    "id": "670471AF",
+    "asset_tag": "SG-009"
+  },
+  {
+    "item": "3D PRINTERS A1",
+    "description": "",
+    "quantity": 2,
+    "unit_price": 229100.0,
+    "total": 458200.0,
+    "current_owner": "WORKSHOP",
+    "id": "D8B9979A",
+    "asset_tag": "SG-010"
+  },
+  {
+    "item": "3D PRINTER",
+    "description": "BAMBOO LAB H2D",
+    "quantity": 1,
+    "unit_price": 1190718.0,
+    "total": 1190718.0,
+    "current_owner": "WORKSHOP",
+    "id": "7123EADD",
+    "asset_tag": "SG-011"
+  },
+  {
+    "item": "MYCOBOT-PRO-630-EN (ROBOTIC ARM)",
+    "description": "",
+    "quantity": 1,
+    "unit_price": 2326324.0,
+    "total": 4652648.0,
+    "current_owner": "WORKSHOP",
+    "id": "B71AFCB0",
+    "asset_tag": "SG-012"
+  },
+  {
+    "item": "STOOLS PLASTIC",
+    "description": "",
+    "quantity": 2,
+    "unit_price": 460.0,
+    "total": 920.0,
+    "current_owner": "WORKSHOP",
+    "id": "2A39C995",
+    "asset_tag": "SG-013"
+  },
+  {
+    "item": "DRY BOX 1",
+    "description": "ANDBON",
+    "quantity": 1,
+    "unit_price": 198000.0,
+    "total": 198000.0,
+    "current_owner": "WORKSHOP",
+    "id": "BC4933A0",
+    "asset_tag": "SG-014"
+  },
+  {
+    "item": "PLASTIC DRAWERS",
+    "description": "",
+    "quantity": 10,
+    "unit_price": 4260.0,
+    "total": 42600.0,
+    "current_owner": "THISARA, OBHSH, THILINA, DANINDU, ERANDA, SUDEERA, KANISHKA, IMESH, IMESH, ARAVINDA",
+    "id": "77B7D31D",
+    "asset_tag": "SG-015"
+  },
+  {
+    "item": "WOODEN LOCKER",
+    "description": "",
+    "quantity": 1,
+    "unit_price": 9500.0,
+    "total": 9500.0,
+    "current_owner": "ADMIN",
+    "id": "2F177109",
+    "asset_tag": "SG-016"
+  },
+  {
+    "item": "LAPTOP",
+    "description": "DELL LATITUDE",
+    "quantity": 1,
+    "unit_price": 99500.0,
+    "total": 99500.0,
+    "current_owner": "YUWANDEE",
+    "id": "846FB696",
+    "asset_tag": "SG-017"
+  },
+  {
+    "item": "LAPTOP",
+    "description": "ACER NITRO 5 I5 13GEN",
+    "quantity": 1,
+    "unit_price": 372000.0,
+    "total": 372000.0,
+    "current_owner": "DANINDU",
+    "id": "7ADF125B",
+    "asset_tag": "SG-018"
+  },
+  {
+    "item": "LAPTOP",
+    "description": "VICTUS",
+    "quantity": 2,
+    "unit_price": 366000.0,
+    "total": 732000.0,
+    "current_owner": "IMESH,SALITHA",
+    "id": "A641D8CC",
+    "asset_tag": "SG-019"
+  },
+  {
+    "item": "LAPTOP",
+    "description": "ASUS VIVOBOOK 15",
+    "quantity": 1,
+    "unit_price": 199000.0,
+    "total": 199000.0,
+    "current_owner": "SUDEERA",
+    "id": "B1FE4F18",
+    "asset_tag": "SG-020"
+  },
+  {
+    "item": "LAPTOP",
+    "description": "LENOVO LEGION",
+    "quantity": 1,
+    "unit_price": 475000.0,
+    "total": 475000.0,
+    "current_owner": "OBHASH",
+    "id": "453D5A5F",
+    "asset_tag": "SG-021"
+  },
+  {
+    "item": "LAPTOP",
+    "description": "ASUS EXPERTBOOK",
+    "quantity": 1,
+    "unit_price": 197500.0,
+    "total": 197500.0,
+    "current_owner": "THILINA",
+    "id": "339109C0",
+    "asset_tag": "SG-022"
+  },
+  {
+    "item": "LAPTOP",
+    "description": "MACBOOK AIR 13 INCH M5",
+    "quantity": 1,
+    "unit_price": 379040.0,
+    "total": 379040.0,
+    "current_owner": "HIRUSHA",
+    "id": "48456650",
+    "asset_tag": "SG-023"
+  },
+  {
+    "item": "LAPTOP",
+    "description": "MACBOOK AIR 13 INCH M5",
+    "quantity": 1,
+    "unit_price": 379040.0,
+    "total": 379040.0,
+    "current_owner": "KUSHAN",
+    "id": "EA99A04B",
+    "asset_tag": "SG-024"
+  },
+  {
+    "item": "ACER MONITORS",
+    "description": "B246HL",
+    "quantity": 5,
+    "unit_price": 20000.0,
+    "total": 100000.0,
+    "current_owner": "HESHAN,VISHEN,JANITH,MADUPA, HIRUSHA",
+    "id": "8DBB44F5",
+    "asset_tag": "SG-025"
+  },
+  {
+    "item": "ASUS MONITORS",
+    "description": "VZ249",
+    "quantity": 1,
+    "unit_price": 26000.0,
+    "total": 26000.0,
+    "current_owner": "RISHMIKA",
+    "id": "AFA0269D",
+    "asset_tag": "SG-026"
+  },
+  {
+    "item": "MSI MONITORS",
+    "description": "PRO MP223 SERIES",
+    "quantity": 6,
+    "unit_price": 28000.0,
+    "total": 168000.0,
+    "current_owner": "THILINA GURUGE,VICHAKSHA, THISARA, CHAMOD, PASINDU, ASHMINI",
+    "id": "7D95CC5E",
+    "asset_tag": "SG-027"
+  },
+  {
+    "item": "FALCON MONITOR",
+    "description": "HS215",
+    "quantity": 4,
+    "unit_price": 20000.0,
+    "total": 80000.0,
+    "current_owner": "MADAWA, OBHASH, CHATHURA, SALITHA",
+    "id": "CFB19E41",
+    "asset_tag": "SG-028"
+  },
+  {
+    "item": "DELL MONITORS",
+    "description": "P2219H",
+    "quantity": 3,
+    "unit_price": 34900.0,
+    "total": 104700.0,
+    "current_owner": "ARAVINDA, ASHMIKA, VIHANGA,",
+    "id": "5B402654",
+    "asset_tag": "SG-029"
+  },
+  {
+    "item": "DELL MONITORS",
+    "description": "P2417H",
+    "quantity": 5,
+    "unit_price": 18000.0,
+    "total": 90000.0,
+    "current_owner": "THILINA, SUDEERA, DANINDU,ERANDA, IMESH",
+    "id": "BF6D94A3",
+    "asset_tag": "SG-030"
+  },
+  {
+    "item": "DELL MONITORS",
+    "description": "P2419H",
+    "quantity": 1,
+    "unit_price": 28500.0,
+    "total": 28500.0,
+    "current_owner": "KUSHAN",
+    "id": "8F75A2E7",
+    "asset_tag": "SG-031"
+  },
+  {
+    "item": "HP MONITORS",
+    "description": "E243",
+    "quantity": 1,
+    "unit_price": 31990.0,
+    "total": 31990.0,
+    "current_owner": "LAHIRU",
+    "id": "D45007E2",
+    "asset_tag": "SG-032"
+  },
+  {
+    "item": "HP MONITORS",
+    "description": "E230T",
+    "quantity": 1,
+    "unit_price": 38500.0,
+    "total": 38500.0,
+    "current_owner": "KANISHKA",
+    "id": "649E1228",
+    "asset_tag": "SG-033"
+  },
+  {
+    "item": "STARLINK",
+    "description": "",
+    "quantity": 1,
+    "unit_price": 134900.0,
+    "total": 134900.0,
+    "current_owner": "",
+    "id": "24BC02AC",
+    "asset_tag": "SG-034"
+  },
+  {
+    "item": "TABLES BROWN SMALL",
+    "description": "",
+    "quantity": 8,
+    "unit_price": 18500.0,
+    "total": 148000.0,
+    "current_owner": "",
+    "id": "28DEBD85",
+    "asset_tag": "SG-035"
+  },
+  {
+    "item": "PIYESTRA HEAD REST CHAIRS",
+    "description": "",
+    "quantity": 31,
+    "unit_price": 23183.0,
+    "total": 718673.0,
+    "current_owner": "",
+    "id": "DEA4CC1C",
+    "asset_tag": "SG-036"
+  },
+  {
+    "item": "MOBIE PHONES",
+    "description": "REDMI NOTE 14",
+    "quantity": 1,
+    "unit_price": 59500.0,
+    "total": 59500.0,
+    "current_owner": "HIRUSHI HR",
+    "id": "029E36C1",
+    "asset_tag": "SG-037"
+  },
+  {
+    "item": "MOBIE PHONES",
+    "description": "SAMSUNG GALAXY S24 VIOLET",
+    "quantity": 1,
+    "unit_price": 134720.0,
+    "total": 134720.0,
+    "current_owner": "HESHAN",
+    "id": "11A2B760",
+    "asset_tag": "SG-038"
+  },
+  {
+    "item": "MOBIE PHONES",
+    "description": "SAMSUNG GALAXY S24",
+    "quantity": 1,
+    "unit_price": 127000.0,
+    "total": 127000.0,
+    "current_owner": "CHANAKA",
+    "id": "86569CDF",
+    "asset_tag": "SG-039"
+  },
+  {
+    "item": "MOBIE PHONES",
+    "description": "SAMSUNG GALAXY S20",
+    "quantity": 1,
+    "unit_price": 43500.0,
+    "total": 43500.0,
+    "current_owner": "HASITHA",
+    "id": "DEBB6118",
+    "asset_tag": "SG-040"
+  },
+  {
+    "item": "MOBILE PHONES",
+    "description": "REDMI NOTE 13 PRO",
+    "quantity": 1,
+    "unit_price": 62000.0,
+    "total": 62000.0,
+    "current_owner": "STOCK",
+    "id": "0553837F",
+    "asset_tag": "SG-041"
+  },
+  {
+    "item": "DIGITAL CLAMP MULTIMETER",
+    "description": "TA 1148",
+    "quantity": 1,
+    "unit_price": 13300.0,
+    "total": 13300.0,
+    "current_owner": "SOLDERING STATION",
+    "id": "6DEFA198",
+    "asset_tag": "SG-042"
+  },
+  {
+    "item": "DIGITAL MICROSCOPE",
+    "description": "",
+    "quantity": 1,
+    "unit_price": 17450.0,
+    "total": 17450.0,
+    "current_owner": "SOLDERING STATION",
+    "id": "57DF7B81",
+    "asset_tag": "SG-043"
+  },
+  {
+    "item": "DIGITAL MULTIMETER",
+    "description": "",
+    "quantity": 3,
+    "unit_price": 3550.0,
+    "total": 10650.0,
+    "current_owner": "SOLDERING STATION",
+    "id": "5361A511",
+    "asset_tag": "SG-044"
+  },
+  {
+    "item": "BENCH POWER SUPPLY",
+    "description": "WANPTEK",
+    "quantity": 1,
+    "unit_price": 20000.0,
+    "total": 20000.0,
+    "current_owner": "SOLDERING STATION",
+    "id": "402BD5F7",
+    "asset_tag": "SG-045"
+  },
+  {
+    "item": "OSCILASCOPE",
+    "description": "",
+    "quantity": 1,
+    "unit_price": 119101.0,
+    "total": 119101.0,
+    "current_owner": "SOLDERING STATION",
+    "id": "76376B29",
+    "asset_tag": "SG-046"
+  },
+  {
+    "item": "OSCILASCOPE",
+    "description": "",
+    "quantity": 1,
+    "unit_price": 127967.0,
+    "total": 127967.0,
+    "current_owner": "SOLDERING STATION",
+    "id": "1B125D7E",
+    "asset_tag": "SG-047"
+  },
+  {
+    "item": "SOLDERING HOT PLATE",
+    "description": "",
+    "quantity": 1,
+    "unit_price": 28770.0,
+    "total": 28770.0,
+    "current_owner": "SOLDERING STATION",
+    "id": "CFF036CB",
+    "asset_tag": "SG-048"
+  },
+  {
+    "item": "SOLDERING STATION",
+    "description": "KAWH8586D",
+    "quantity": 2,
+    "unit_price": 15600.0,
+    "total": 31200.0,
+    "current_owner": "SOLDERING STATION",
+    "id": "9E6ADBBF",
+    "asset_tag": "SG-049"
+  },
+  {
+    "item": "LOGIC ANALYZER",
+    "description": "",
+    "quantity": 1,
+    "unit_price": 1534.0,
+    "total": 1534.0,
+    "current_owner": "SOLDERING STATION",
+    "id": "196204AA",
+    "asset_tag": "SG-050"
+  },
+  {
+    "item": "FUME EXTRACTOR",
+    "description": "",
+    "quantity": 1,
+    "unit_price": 12500.0,
+    "total": 12500.0,
+    "current_owner": "SOLDERING STATION",
+    "id": "48563910",
+    "asset_tag": "SG-051"
+  },
+  {
+    "item": "NIKON D5600 D CAMERA",
+    "description": "",
+    "quantity": 1,
+    "unit_price": 245000.0,
+    "total": 245000.0,
+    "current_owner": "DB003",
+    "id": "409602FB",
+    "asset_tag": "SG-052"
+  },
+  {
+    "item": "INSTA 360",
+    "description": "S3",
+    "quantity": 1,
+    "unit_price": 98500.0,
+    "total": 98500.0,
+    "current_owner": "DB003",
+    "id": "E87C5486",
+    "asset_tag": "SG-053"
+  },
+  {
+    "item": "DJI AVATAR DRONE",
+    "description": "",
+    "quantity": 1,
+    "unit_price": 389500.0,
+    "total": 389500.0,
+    "current_owner": "DB003",
+    "id": "5181B5EC",
+    "asset_tag": "SG-054"
+  },
+  {
+    "item": "META QUEST 3S",
+    "description": "",
+    "quantity": 1,
+    "unit_price": 155000.0,
+    "total": 155000.0,
+    "current_owner": "DB003",
+    "id": "F0373107",
+    "asset_tag": "SG-055"
+  },
+  {
+    "item": "FLIR ONE",
+    "description": "",
+    "quantity": 1,
+    "unit_price": 189090.0,
+    "total": 189090.0,
+    "current_owner": "DB003",
+    "id": "40108F4E",
+    "asset_tag": "SG-056"
+  },
+  {
+    "item": "SUB",
+    "description": "",
+    "quantity": 1,
+    "unit_price": 50000.0,
+    "total": 50000.0,
+    "current_owner": "",
+    "id": "5D40CCC9",
+    "asset_tag": "SG-057"
+  },
+  {
+    "item": "MAC MINI M1",
+    "description": "",
+    "quantity": 1,
+    "unit_price": 118000.0,
+    "total": 118000.0,
+    "current_owner": "VICHAKSHA",
+    "id": "527D4E71",
+    "asset_tag": "SG-058"
+  },
+  {
+    "item": "MAC MINI M4",
+    "description": "",
+    "quantity": 1,
+    "unit_price": 345000.0,
+    "total": 345000.0,
+    "current_owner": "VICHAKSHA",
+    "id": "FAB100F8",
+    "asset_tag": "SG-059"
+  },
+  {
+    "item": "MAC MINI M4",
+    "description": "",
+    "quantity": 1,
+    "unit_price": 345000.0,
+    "total": 345000.0,
+    "current_owner": "KANISHKA",
+    "id": "90C3478E",
+    "asset_tag": "SG-060"
+  },
+  {
+    "item": "AIR COMPRESSOR",
+    "description": "",
+    "quantity": 1,
+    "unit_price": 38000.0,
+    "total": 38000.0,
+    "current_owner": "WORKSHOP",
+    "id": "A52D622C",
+    "asset_tag": "SG-061"
+  },
+  {
+    "item": "EPSON ES400",
+    "description": "",
+    "quantity": 1,
+    "unit_price": 124638.0,
+    "total": 124638.0,
+    "current_owner": "ADMIN",
+    "id": "E8642368",
+    "asset_tag": "SG-062"
+  }
+];
+
+    const CATEGORY_ICONS = {
+        'LAPTOP': '💻',
+        'MONITOR': '🖥️',
+        'PHONE': '📱',
+        'MOBIE': '📱',
+        'MOBILE': '📱',
+        'CHAIR': '🪑',
+        'TABLE': '🪑',
+        'STOOL': '🪑',
+        'CUPBOARD': '🗄️',
+        'LOCKER': '🔐',
+        'DRAWER': '🗃️',
+        'AC': '❄️',
+        'TV': '📺',
+        'PRINTER': '🖨️',
+        '3D PRINT': '🔧',
+        'DRILL': '🔩',
+        'SAW': '🪚',
+        'CAMERA': '📷',
+        'DRONE': '🚁',
+        'QUEST': '🥽',
+        'STARLINK': '📡',
+        'DISPENSER': '💧',
+        'COMPRESSOR': '🔧',
+        'ROBOTIC': '🤖',
+        'MICROSCOPE': '🔬',
+        'MULTIMETER': '📏',
+        'OSCILASCOPE': '📊',
+        'SOLDERING': '🔥',
+        'POWER SUPPLY': '⚡',
+        'FLIR': '🌡️',
+        'SCANNER': '🖨️',
+        'EPSON': '🖨️',
+        'MAC MINI': '🖥️',
+        'DRY BOX': '📦',
+        'INSTA': '📸',
+        'FUME': '💨',
+        'LOGIC': '🔌',
+        'SUB': '📦',
+        'DEFAULT': '📦'
+    };
+
+    function getIcon(itemName) {
+        const upper = itemName.toUpperCase();
+        for (const [key, icon] of Object.entries(CATEGORY_ICONS)) {
+            if (key !== 'DEFAULT' && upper.includes(key)) return icon;
+        }
+        return CATEGORY_ICONS['DEFAULT'];
+    }
+
+    function formatCurrency(amount) {
+        return 'LKR ' + Number(amount).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+    }
+
+    function getItemById(id) {
+        return ITEMS.find(item => item.id === id);
+    }
+
+    function renderLanding() {
+        const totalValue = ITEMS.reduce((sum, i) => sum + i.total, 0);
+        const totalItems = ITEMS.length;
+        const totalQty = ITEMS.reduce((sum, i) => sum + i.quantity, 0);
+
+        return `
+            <div class="landing">
+                <div class="landing-icon">📋</div>
+                <h2>Asset Inventory</h2>
+                <p>Scan a QR code or browse the complete inventory below to view asset details.</p>
+                <div class="stats-row">
+                    <div class="stat-card">
+                        <div class="stat-value">${totalItems}</div>
+                        <div class="stat-label">Assets</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">${totalQty}</div>
+                        <div class="stat-label">Total Qty</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">${(totalValue/1000000).toFixed(1)}M</div>
+                        <div class="stat-label">Value (LKR)</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="search-box">
+                <span class="search-icon">🔍</span>
+                <input type="text" id="searchInput" placeholder="Search assets..." oninput="filterItems()">
+            </div>
+
+            <div class="section-title" id="listTitle">All Assets (${totalItems})</div>
+            <div class="item-list" id="itemList">
+                ${ITEMS.map((item, index) => `
+                    <a href="#item-${item.id}" class="item-list-card" data-name="${item.item}" data-desc="${item.description}" data-owner="${item.current_owner}" style="animation: fadeInUp 0.4s ease-out ${Math.min(index * 0.03, 0.8)}s backwards;">
+                        <div class="item-list-icon">${getIcon(item.item)}</div>
+                        <div class="item-list-info">
+                            <div class="item-list-name">${item.item}</div>
+                            <div class="item-list-sub">${item.description || item.current_owner || 'No description'}</div>
+                        </div>
+                        <div class="item-list-tag">${item.asset_tag}</div>
+                        <div class="item-list-arrow">›</div>
+                    </a>
+                `).join('')}
+            </div>
+            <div class="no-results hidden" id="noResults">
+                <div class="emoji">🔍</div>
+                <p>No assets found matching your search.</p>
+            </div>
+        `;
+    }
+
+    function renderItemDetail(item) {
+        const owners = item.current_owner ? item.current_owner.split(',').map(o => o.trim()).filter(o => o) : [];
+        const ownerHtml = owners.length > 0 
+            ? owners.map(o => `<span class="owner-tag">${o}</span>`).join(' ') 
+            : '<span class="no-owner">Unassigned</span>';
+
+        return `
+            <div class="item-detail">
+                <div class="asset-tag-header">
+                    <a href="#home" class="back-btn">← Back</a>
+                    <div class="asset-badge">${item.asset_tag}</div>
+                </div>
+
+                <div class="detail-card">
+                    <div class="detail-card-header">
+                        <div class="item-icon">${getIcon(item.item)}</div>
+                        <div class="item-name">${item.item}</div>
+                        ${item.description ? `<div class="item-desc">${item.description}</div>` : ''}
+                    </div>
+                    <div class="detail-card-body">
+                        <div class="detail-row">
+                            <div class="detail-label">
+                                <span class="icon" style="background:rgba(99,102,241,0.1);">🏷️</span>
+                                Asset ID
+                            </div>
+                            <div class="detail-value" style="font-family:'JetBrains Mono',monospace; color:var(--accent-3);">${item.id}</div>
+                        </div>
+                        ${item.description ? `
+                        <div class="detail-row">
+                            <div class="detail-label">
+                                <span class="icon" style="background:rgba(139,92,246,0.1);">📝</span>
+                                Description
+                            </div>
+                            <div class="detail-value">${item.description}</div>
+                        </div>
+                        ` : ''}
+                        <div class="detail-row">
+                            <div class="detail-label">
+                                <span class="icon" style="background:rgba(16,185,129,0.1);">📦</span>
+                                Quantity
+                            </div>
+                            <div class="detail-value quantity">${item.quantity}</div>
+                        </div>
+                        <div class="detail-row">
+                            <div class="detail-label">
+                                <span class="icon" style="background:rgba(245,158,11,0.1);">💰</span>
+                                Unit Price
+                            </div>
+                            <div class="detail-value currency">${formatCurrency(item.unit_price)}</div>
+                        </div>
+                        <div class="detail-row">
+                            <div class="detail-label">
+                                <span class="icon" style="background:rgba(16,185,129,0.1);">💎</span>
+                                Total Value
+                            </div>
+                            <div class="detail-value currency">${formatCurrency(item.total)}</div>
+                        </div>
+                        <div class="detail-row">
+                            <div class="detail-label">
+                                <span class="icon" style="background:rgba(99,102,241,0.1);">👤</span>
+                                Current Owner
+                            </div>
+                            <div class="detail-value">${ownerHtml}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `;
+    }
+
+    function filterItems() {
+        const query = document.getElementById('searchInput').value.toLowerCase();
+        const cards = document.querySelectorAll('.item-list-card');
+        let visible = 0;
+
+        cards.forEach(card => {
+            const name = card.dataset.name.toLowerCase();
+            const desc = card.dataset.desc.toLowerCase();
+            const owner = card.dataset.owner.toLowerCase();
+            const match = name.includes(query) || desc.includes(query) || owner.includes(query);
+            card.classList.toggle('hidden', !match);
+            if (match) visible++;
+        });
+
+        document.getElementById('noResults').classList.toggle('hidden', visible > 0);
+        document.getElementById('listTitle').textContent = query 
+            ? `Results (${visible})` 
+            : `All Assets (${ITEMS.length})`;
+    }
+
+    function router() {
+        const hash = window.location.hash;
+        const app = document.getElementById('app');
+
+        if (hash.startsWith('#item-')) {
+            const id = hash.replace('#item-', '');
+            const item = getItemById(id);
+            if (item) {
+                app.innerHTML = renderItemDetail(item);
+                window.scrollTo(0, 0);
+                return;
+            }
+        }
+
+        app.innerHTML = renderLanding();
+    }
+
+    window.addEventListener('hashchange', router);
+    window.addEventListener('load', router);
+    </script>
+</body>
+</html>
